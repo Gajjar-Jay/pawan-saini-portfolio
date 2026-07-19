@@ -58,7 +58,8 @@ h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-0.01em;
 section{position:relative;}
 
 /* ===== Grain / noise overlay ===== */
-#grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.05;mix-blend-mode:overlay;}
+#grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.035;mix-blend-mode:overlay;}
+@media(max-width:900px){#grain{display:none;}}
 
 /* ===== Custom cursor ===== */
 .cursor{
@@ -204,6 +205,12 @@ section{padding:150px 0;}
 .about-img{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:3/4;}
 .about-img img{width:100%;height:100%;object-fit:cover;}
 .about-img .frame{position:absolute;inset:18px;border:1px solid rgba(245,245,245,.25);pointer-events:none;}
+.about-img::after,.fs-item::after,.m-item::after,.project-media::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:22%;
+  background:linear-gradient(180deg, transparent 0%, rgba(5,5,5,.55) 65%, rgba(5,5,5,.95) 100%);
+  pointer-events:none;z-index:1;
+}
+.m-item .m-caption,.fs-item .fs-lbl,.project-media .pm-border{z-index:2;}
 .about-body p{color:var(--gray);font-size:17px;line-height:1.85;margin-bottom:22px;max-width:540px;}
 .about-body p.lead{color:var(--white);font-size:21px;font-family:'Bodoni Moda',serif;font-weight:400;line-height:1.5;}
 .stat-row{display:flex;gap:56px;margin-top:56px;flex-wrap:wrap;}
@@ -371,7 +378,7 @@ footer{padding:70px 0 40px;border-top:1px solid var(--line);}
 .back-top:hover .ring{border-color:var(--accent);transform:translateY(-4px);}
 .footer-bottom{display:flex;justify-content:space-between;color:var(--gray);font-size:12.5px;flex-wrap:wrap;gap:14px;font-family:'JetBrains Mono',monospace;letter-spacing:.02em;}
 .marquee{overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin:60px 0;}
-.marquee-track{display:inline-block;animation:marquee 22s linear infinite;}
+.marquee-track{display:inline-block;animation:marquee 44s linear infinite;}
 .marquee-track span{font-family:'Bodoni Moda',serif;font-style:italic;font-size:26px;color:var(--gray);margin-right:50px;}
 .marquee-track span em{color:var(--accent);font-style:italic;}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -426,6 +433,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.4);
   opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .4s var(--ease), transform .4s var(--ease);cursor:none;}
 #stickyHire.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+#stickyHire.hide-near-contact{opacity:0 !important;transform:translateY(16px) !important;pointer-events:none !important;}
 #stickyHire svg{width:15px;height:15px;}
 @media(max-width:640px){#stickyHire{right:16px;bottom:16px;padding:13px 18px;font-size:10px;}#stickyHire .full{display:none;}}
 
@@ -606,7 +614,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <p class="skills-intro">Creative thinking, strong visual sense, teamwork, adaptability, and excellent time management are key strengths that define my work.</p>
     <div class="skill-grid">
       <div class="skill-card tilt">
-        <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><path d="M3 8a2 2 0 012-2h9l2 2h3a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="14" r="3.4" stroke="currentColor" stroke-width="1.3"/></svg>
+        <svg class="skill-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8h18v11a1 1 0 01-1 1H4a1 1 0 01-1-1V8z" stroke="currentColor" stroke-width="1.3"/><path d="M3 8l2-4h3l-1 4M8 8l2-4h3l-1 4M13 8l2-4h3l-1 4M18 8l2-4h1v4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
         <h3>Cinematography</h3>
         <div class="skill-bar"><i data-w="94"></i></div><span class="skill-pct">94%</span>
       </div>
@@ -616,7 +624,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="skill-bar"><i data-w="88"></i></div><span class="skill-pct">88%</span>
       </div>
       <div class="skill-card tilt">
-        <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><path d="M3 8a2 2 0 012-2h2l1.5-2h7L17 6h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="13" r="3.2" stroke="currentColor" stroke-width="1.3"/></svg>
+        <svg class="skill-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.3"/><path d="M12 3l3 6-6 3M21 12l-6 3-3-6M12 21l-3-6 6-3M3 12l6-3 3 6" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
         <h3>Photography</h3>
         <div class="skill-bar"><i data-w="96"></i></div><span class="skill-pct">96%</span>
       </div>
@@ -909,13 +917,16 @@ window.addEventListener('load', () => {
 });
 
 /* ---------- Lenis smooth scroll ---------- */
+const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let lenis;
-try{
-  lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => lenis.raf(time * 1000));
-  gsap.ticker.lagSmoothing(0);
-}catch(e){}
+if(!REDUCE_MOTION){
+  try{
+    lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }catch(e){}
+}
 
 /* ---------- Custom cursor ---------- */
 const cursor = document.getElementById('cursor');
@@ -982,6 +993,15 @@ window.addEventListener('scroll', () => {
   bar.style.width = (window.scrollY/h*100) + '%';
   stickyHire.classList.toggle('show', window.scrollY > window.innerHeight * 0.9);
 });
+/* Hide sticky Hire Me when contact section is in view (avoids CTA duplication + footer overlap) */
+(function(){
+  const contact = document.getElementById('contact');
+  if(!contact || !stickyHire) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => stickyHire.classList.toggle('hide-near-contact', e.isIntersecting));
+  }, { rootMargin: '0px 0px -30% 0px', threshold: 0 });
+  io.observe(contact);
+})();
 
 /* ---------- Mobile menu ---------- */
 const menuBtn = document.getElementById('menuBtn');
