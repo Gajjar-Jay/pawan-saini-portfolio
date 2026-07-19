@@ -58,7 +58,8 @@ h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-0.01em;
 section{position:relative;}
 
 /* ===== Grain / noise overlay ===== */
-#grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.05;mix-blend-mode:overlay;}
+#grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.035;mix-blend-mode:overlay;}
+@media(max-width:900px){#grain{display:none;}}
 
 /* ===== Custom cursor ===== */
 .cursor{
