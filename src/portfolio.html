@@ -917,13 +917,16 @@ window.addEventListener('load', () => {
 });
 
 /* ---------- Lenis smooth scroll ---------- */
+const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let lenis;
-try{
-  lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => lenis.raf(time * 1000));
-  gsap.ticker.lagSmoothing(0);
-}catch(e){}
+if(!REDUCE_MOTION){
+  try{
+    lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }catch(e){}
+}
 
 /* ---------- Custom cursor ---------- */
 const cursor = document.getElementById('cursor');
