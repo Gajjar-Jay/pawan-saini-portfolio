@@ -205,6 +205,12 @@ section{padding:150px 0;}
 .about-img{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:3/4;}
 .about-img img{width:100%;height:100%;object-fit:cover;}
 .about-img .frame{position:absolute;inset:18px;border:1px solid rgba(245,245,245,.25);pointer-events:none;}
+.about-img::after,.fs-item::after,.m-item::after,.project-media::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:22%;
+  background:linear-gradient(180deg, transparent 0%, rgba(5,5,5,.55) 65%, rgba(5,5,5,.95) 100%);
+  pointer-events:none;z-index:1;
+}
+.m-item .m-caption,.fs-item .fs-lbl,.project-media .pm-border{z-index:2;}
 .about-body p{color:var(--gray);font-size:17px;line-height:1.85;margin-bottom:22px;max-width:540px;}
 .about-body p.lead{color:var(--white);font-size:21px;font-family:'Bodoni Moda',serif;font-weight:400;line-height:1.5;}
 .stat-row{display:flex;gap:56px;margin-top:56px;flex-wrap:wrap;}
