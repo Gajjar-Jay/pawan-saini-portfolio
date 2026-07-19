@@ -993,6 +993,15 @@ window.addEventListener('scroll', () => {
   bar.style.width = (window.scrollY/h*100) + '%';
   stickyHire.classList.toggle('show', window.scrollY > window.innerHeight * 0.9);
 });
+/* Hide sticky Hire Me when contact section is in view (avoids CTA duplication + footer overlap) */
+(function(){
+  const contact = document.getElementById('contact');
+  if(!contact || !stickyHire) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => stickyHire.classList.toggle('hide-near-contact', e.isIntersecting));
+  }, { rootMargin: '0px 0px -30% 0px', threshold: 0 });
+  io.observe(contact);
+})();
 
 /* ---------- Mobile menu ---------- */
 const menuBtn = document.getElementById('menuBtn');
