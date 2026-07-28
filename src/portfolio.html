@@ -534,7 +534,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="../public/images/hero-poster.jpg" aria-hidden="true">
+    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="/images/hero-poster.jpg" aria-hidden="true">
       <source src="/videos/hero-reel.mp4" type="video/mp4">
       <source src="/videos/hero-reel.webm" type="video/webm">
     </video>
@@ -602,7 +602,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           <img class="work-poster" src="/images/poster-wedding.jpg" alt="Wedding film still — bride and groom, warm golden light" loading="lazy">
           <video class="work-video" muted loop playsinline preload="none" poster="/images/poster-wedding.jpg" aria-hidden="true">
             <source data-src="/videos/proj-wedding.mp4" type="video/mp4">
-            <source data-src="/public/videos/proj-wedding.webm" type="video/webm">
+            <source data-src="/videos/proj-wedding.webm" type="video/webm">
           </video>
           <button type="button" class="work-play" aria-label="Play preview">
             <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
@@ -1236,19 +1236,19 @@ const PROJECTS = {
     cat: 'Wedding Film', title: 'Golden Hour Vows',
     story: 'Shot across a single golden afternoon, this film leans into candid emotion over choreography — laughter between takes, hands finding hands, and the warm glow of celebration carried through every frame.',
     client: 'Private Client', location: 'Delhi, India', direction: 'Pawan Saini',
-    src: '../public/videos/film-wedding.mp4'
+    src: '/videos/film-wedding.mp4'
   },
   fashion: {
     cat: 'Commercial / Fashion', title: 'Editorial Light',
     story: 'A commercial fashion piece built around natural light, silhouette, and movement — composed to feel less like an advertisement and more like a quiet, cinematic portrait.',
     client: 'Ethnic Town', location: 'Studio & On-Location', direction: 'Pawan Saini',
-    src: '../public/videos/film-fashion.mp4'
+    src: '/videos/film-fashion.mp4'
   },
   lifestyle: {
     cat: 'Lifestyle / Travel', title: 'Streets in Motion',
     story: 'A monochrome travel study following texture and rhythm through the city — motion blur, reflections, and the small unscripted moments that make a place feel alive.',
     client: 'Personal Project', location: 'On the Road', direction: 'Pawan Saini',
-    src: '../public/videos/film-lifestyle.mp4'
+    src: '/videos/film-lifestyle.mp4'
   }
 };
 const PROJECT_ORDER = ['wedding','fashion','lifestyle'];
