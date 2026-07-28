@@ -481,9 +481,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ===== WhatsApp / resume buttons in contact ===== */
 .contact-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;}
 .ghost-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border:1px solid var(--line);border-radius:100px;
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bg);
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--white);
   transition:border-color .3s, color .3s;}
-.ghost-btn:hover{border-color:var(--accent);color:var(--white);}
+.ghost-btn:hover{border-color:var(--accent);color:var(--accent);}
 .ghost-btn svg{width:14px;height:14px;}
 
 /* ===== Header hire button ===== */
@@ -534,9 +534,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="../public/images/hero-poster.jpg" aria-hidden="true">
-      <source src="/videos/hero-reel.mp4" type="video/mp4">
+    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="/images/hero-poster.jpg" aria-hidden="true">
       <source src="/videos/hero-reel.webm" type="video/webm">
+      <source src="/videos/hero-reel.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-scrim"></div>
@@ -601,8 +601,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="work-media">
           <img class="work-poster" src="/images/poster-wedding.jpg" alt="Wedding film still — bride and groom, warm golden light" loading="lazy">
           <video class="work-video" muted loop playsinline preload="none" poster="/images/poster-wedding.jpg" aria-hidden="true">
-            <source data-src="/videos/proj-wedding.mp4" type="video/mp4">
             <source data-src="/videos/proj-wedding.webm" type="video/webm">
+            <source data-src="/videos/proj-wedding.mp4" type="video/mp4">
           </video>
           <button type="button" class="work-play" aria-label="Play preview">
             <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
